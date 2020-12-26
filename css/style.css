@@ -1,0 +1,359 @@
+/*Import Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,300&display=swap");
+
+/*Make whole web font 72.5%. Default font size was 16px, now font change 72.5% === 11.6px */
+html {
+  font-size: 72.5%;
+}
+
+/*target whole body / universe for vanish 
+all default margin padding and define font family for whole web*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*Css Variables*/
+:root {
+  --mainColor--: #c77c46;
+  --navbar--: #eee;
+}
+
+/*SideBar*/
+.sidebar {
+  width: 8rem;
+  height: 100%;
+  background-color: var(--navbar--);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.menu__icons {
+  margin-top: 3rem;
+  cursor: pointer;
+}
+.menu__icons:hover > .line {
+  width: 2.5rem;
+  transition: 0.5s;
+}
+.line {
+  height: 0.2rem;
+  width: 2.5rem;
+  background-color: #222;
+  margin-bottom: 0.6rem;
+}
+.line__1,
+.line__3 {
+  width: 1.8rem;
+  background-color: var(--mainColor--);
+}
+.year {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+/*Navigation*/
+.navigation {
+  left: -32rem;
+  position: fixed;
+  width: 40rem;
+  height: 100%;
+  background: linear-gradient(
+      to top,
+      rgba(34, 32, 41, 1),
+      rgba(32, 34, 41, 0.8)
+    ),
+    url(../img/nav-bg.jpg) center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: left 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.navigation__heading {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  color: var(--mainColor--);
+  text-align: center;
+}
+
+.navigation__search {
+  position: relative;
+}
+
+.navigation__search__input {
+  width: 30rem;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  color: var(--mainColor--);
+  letter-spacing: 0.1rem;
+  outline: none;
+  border: 0.1rem solid #555;
+  border-radius: 4rem;
+  transition: 0.3s;
+}
+.navigation__search__input:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.navigation__search__btn {
+  border: none;
+  background-color: transparent;
+  color: var(--mainColor--);
+  font-size: 1.7rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+.navigation__list {
+  list-style: none;
+  padding: 0;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation__item {
+  position: relative;
+}
+.navigation__link {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navigation__link::before {
+  content: "";
+  width: 0rem;
+  height: 0.1rem;
+  background-color: var(--mainColor--);
+  position: absolute;
+  top: 1rem;
+  left: -4rem;
+}
+.navigation__link::after {
+  content: "";
+  width: 0rem;
+  height: 0.1rem;
+  background-color: var(--mainColor--);
+  position: absolute;
+  top: 1rem;
+  right: -4rem;
+}
+
+.navigation__link:hover {
+  color: var(--mainColor--);
+}
+.navigation__link:hover::before,
+.navigation__link:hover::after {
+  width: 3rem;
+  transition: 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.copyright {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.checkbox:checked ~ .navigation {
+  left: 8rem;
+}
+.checkbox {
+  display: none;
+}
+.checkbox:checked ~ .sidebar .line__1 {
+  transform: rotate(-405deg) translate(-5px, 6px);
+  width: 2.5rem;
+  transition: 0.5;
+  margin: 0.4rem;
+}
+.checkbox:checked ~ .sidebar .line__2 {
+  opacity: 0;
+}
+.checkbox:checked ~ .sidebar .line__3 {
+  transform: rotate(405deg) translate(-5px, -6px);
+  width: 2.5rem;
+  transition: 0.5s;
+  margin: 0.4rem;
+}
+
+/*Header*/
+.header{
+  margin-left: 8rem;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url(../img/header.jpg) center no-repeat;
+  background-size: cover;
+}
+.brand{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.banner{
+  display: flex;
+  flex-direction: column;
+  color: #ddd;
+  height: 65rem;
+  align-items: center;
+  justify-content: center;
+}
+.banner__heading{
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 7rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  letter-spacing: .2rem;
+  text-align: center;
+}
+.banner__para{
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+.banner__btn{
+  width: 21rem;
+  padding: 1.2rem 2rem;
+  font-size: 2rem;
+  color: #333;
+  letter-spacing: .1rem;
+  border: none;
+  border-radius: 4rem;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to right, gold, goldenrod);
+}
+.banner__btn:hover{
+  background: linear-gradient(to left, gold, goldenrod);
+  transition: .5s;
+}
+.banner__btn:active{
+  transform: translateY(0.8rem);
+}
+
+/*About us*/
+.about__us{
+  margin-left: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ddd;
+}
+.aboutus__content{
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem;
+  box-sizing: border-box;
+}
+.aboutus__heading{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: #555;
+}
+.sub__heading{
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  color: #f5b507;
+}
+.aboutus__paragraph{
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.aboutus__content > .btn{
+  width: 15rem;
+  padding: 0.7rem 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #f5b507;
+  border: 0.1rem solid #f5b507;
+  outline: none;
+  cursor: pointer;
+}
+.btn__arrow{
+  margin-left: 0.5rem;
+}
+.btn:hover, .btn__arrow{
+  margin-left: 0.5rem;
+  transition: 0.5s;
+}
+.aboutus__images{
+  flex: 1 1;
+  position: relative;
+}
+.image{
+  width: 30rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.8rem;
+  border: 0.1rem solid #f5b507;
+}
+.image__1{
+  transform: translate(-20%, -90%);
+}
+.image__2{
+  transform: translate(-70%, -70%);
+}
+.image__3{
+  transform: translate(-50%, -50%);
+}
+.image__4{
+  transform: translate(-30%, -30%);
+}
+.small__underline{
+  width: 9rem;
+  height: 0.1rem;
+  background-color: #f5b507;
+  margin: 0 auto 1rem auto;
+}
+.large__underline{
+  width: 20rem;
+  height: 0.1rem;
+  background-color: #f5b507;
+  margin: auto;
+}
+/*For Very small Screen*/
+
+@media (max-width: 550px) {
+  .sidebar {
+    width: 5rem;
+  }
+  .navigation {
+    width: 24rem;
+  }
+  .navigation__search__input {
+    width: 16rem;
+  }
+  .navigation__link {
+    font-size: 1.2rem;
+  }
+  .navigation__heading {
+    font-size: 2.5rem;
+  }
+  .checkbox:checked ~ .navigation {
+    left: 5rem;
+  }
+}
