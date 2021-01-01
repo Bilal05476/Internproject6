@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo.png">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
-    <title>Responsive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Hotel Project</title>
 </head>
+
 <body>
     <!--Navbar-->
-    <nav class="navbar__small">
+    <div class="navbar">
         <input type="checkbox" class="checkbox" id="click">
         <!--Saidebar-->
         <div class="sidebar">
@@ -22,6 +27,28 @@
                     <div class="line line__3"></div>
                 </div>
             </label>
+            <ul class="social__icons__list">
+                <li>
+                    <a class="social__link" href="#">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="social__link" href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="social__link" href="#">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="social__link" href="#">
+                        <i class="fa fa-youtube-play"></i>
+                    </a>
+                </li>
+            </ul>
             <div class="year">
                 <p>2020</p>
             </div>
@@ -30,7 +57,7 @@
         <!--Navigation-->
         <nav class="navigation">
             <div class="navigation__header">
-                <h1 class="navigation__heading">Logo</h1>
+                <h1 class="navigation__heading">Hotel Project</h1>
                 <form action="" class="navigation__search">
                     <input type="text" placeholder="Search" class="navigation__search__input">
                     <button class="navigation__search__btn">
@@ -43,65 +70,308 @@
                     <a href="#" class="navigation__link">Home</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#" class="navigation__link">About Us</a>
+                    <a href="#aboutus" class="navigation__link">About Us</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#rooms" class="navigation__link">Rooms</a>
                 </li>
                 <li class="navigation__item">
                     <a href="#" class="navigation__link">Events</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#" class="navigation__link">Customers</a>
+                    <a href="#customers" class="navigation__link">Customers</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#" class="navigation__link">Contact</a>
+                    <a href="#contact" class="navigation__link">Contact</a>
                 </li>
             </ul>
             <div class="copyright">
-                <p>&copy; 2020, Project 6</p>
+                <p>&copy; 2020, Hotel Project</p>
             </div>
         </nav>
         <!--Navigation End-->
-    </nav>
+    </div>
     <!--Navbar End-->
+
     <!--Header-->
-    <div class="header">
+    <header class="header">
         <div class="brand">
-            <img src="img/logo.png" width="150" alt="">
+            <div>
+                <img src="img/logo.png" width="150" alt="">
+            </div>
         </div>
         <div class="banner">
-            <h1 class="banner__heading">
-                Welcome to Our Hotel
-            </h1>
-            <p class="banner__para">
-                Make your Life Modern
+            <h1 class="banner__heading">Welcome to Our Hotel</h1>
+            <p class="banner__paragraph">
+                Make your life Modern
             </p>
             <button class="banner__btn">
                 Check Out
             </button>
         </div>
-    </div>
+    </header>
     <!--Header End-->
-    <!--About Us-->
-    <div class="about__us">
+
+    <!--About us-->
+    <div class="about__us" id="aboutus">
         <div class="aboutus__content">
-            <h1 class="aboutus__heading">
-                About Us
-            </h1>
-            <div class="small__underline"></div>
-            <div class="large__underline"></div>
-            <h3 class="sub__heading">
-                Hotel Project
-            </h3>
-            <p class="aboutus__paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores suscipit vero laborum veritatis illo earum delectus tempore. Reprehenderit, nostrum provident!
-            </p>
-            <button class="btn">Read More <i class="fa fa-angle-double-right btn__arrow"></i></button>
+            <h1 class="aboutus__heading">About us</h1>
+            <div class="underline">
+                <div class="small__underline"></div>
+                <div class="big__underline"></div>
+            </div>
+            <h3 class="sub__heading">Hotel Project</h3>
+            <p class="aboutus__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, facilis
+                excepturi. Incidunt quaerat nesciunt possimus esse. Nesciunt odio ipsa delectus.</p>
+            <button class="btn">Read More
+                <i class="fa fa-angle-double-right btn__arrow"></i>
+            </button>
         </div>
         <div class="aboutus__images">
-            <img src="img/about-1.jpg" alt="" class="image image__1">
-            <img src="img/about-2.jpg" alt="" class="image image__2">
-            <img src="img/about-3.jpg" alt="" class="image image__3">
-            <img src="img/about-4.jpg" alt="" class="image image__4">
+            <img class="image image__1" src="img/about-4.jpg" alt="">
+            <img class="image image__2" src="img/about-2.jpg" alt="">
+            <img class="image image__3" src="img/about-3.jpg" alt="">
+            <img class="image image__4" src="img/about-4.jpg" alt="">
         </div>
     </div>
+    <!--About us End-->
+
+    <!--Rooms-->
+    <section class="rooms" id="rooms">
+        <div class="common__header">
+            <h1 class="common__heading">
+                Rooms In Hotel
+            </h1>
+            <div class="underline">
+                <div class="small__underline"></div>
+                <div class="big__underline"></div>
+            </div>
+        </div>
+        <div class="rooms__cards__wrapper">
+            <div class="room__card">
+                <img src="img/double-room.jpg" class="room__img">
+                <div class="room__card__content">
+                    <h4 class="room__card__heading">Single Room</h4>
+                    <p class="room__card__paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <p class="room__price">$99.99</p>
+                    <button class="row__card__btn">Book Now
+                        <i class="fa fa-angle-double-right btn__arrow"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="room__card">
+                <img src="img/double-room.jpg" class="room__img">
+                <div class="room__card__content">
+                    <h4 class="room__card__heading">Double Room</h4>
+                    <p class="room__card__paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <p class="room__price">$199.99</p>
+                    <button class="row__card__btn">Book Now
+                        <i class="fa fa-angle-double-right btn__arrow"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="room__card">
+                <img src="img/lux.jpg" class="room__img">
+                <div class="room__card__content">
+                    <h4 class="room__card__heading">Lux</h4>
+                    <p class="room__card__paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <p class="room__price">$299.99</p>
+                    <button class="row__card__btn">Book Now
+                        <i class="fa fa-angle-double-right btn__arrow"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="room__card">
+                <img src="img/lux.jpg" class="room__img">
+                <div class="room__card__content">
+                    <h4 class="room__card__heading">Vip</h4>
+                    <p class="room__card__paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <p class="room__price">$399.99</p>
+                    <button class="row__card__btn">Book Now
+                        <i class="fa fa-angle-double-right btn__arrow"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="rooms__btn__wrapper">
+            <button class="rooms__btn">Check More Rooms</button>
+        </div>
+    </section>
+    <!--Room End-->
+
+    <!--Customer Section-->
+    <section class="customers" id="customers">
+        <div class="common__header">
+            <h1 class="common__heading">
+                Our Customers
+            </h1>
+            <div class="underline">
+                <div class="small__underline"></div>
+                <div class="big__underline"></div>
+            </div>
+        </div>
+        <p class="customer__para">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat dolorem veniam voluptatem, sit enim
+            cupiditate eligendi nulla rem consectetur ipsa?
+        </p>
+        <div class="customers__card__wrapper">
+            <div class="customer__card">
+                <div class="customer__image__wrapper">
+                    <img src="img/customer.jpg" alt="" class="customer__image">
+                </div>
+                <div class="customer__info">
+                    <h3 class="customer__name">
+                        Shazam Zoi
+                    </h3>
+                    <p class="customer__para1">
+                        Happy Customer
+                    </p>
+                    <p class="customer__para2">
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iste repellat neque fuga voluptate assumenda? Facilis ut libero
+                        possimus vero officia"
+                    </p>
+                </div>
+            </div>
+            <div class="customer__card">
+                <div class="customer__image__wrapper">
+                    <img src="img/customer.jpg" alt="" class="customer__image">
+                </div>
+                <div class="customer__info">
+                    <h3 class="customer__name">
+                        Shing Ping
+                    </h3>
+                    <p class="customer__para1">
+                        Happy Customer
+                    </p>
+                    <p class="customer__para2">
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste repellat neque fuga voluptate
+                        assumenda?
+                        Facilis ut libero possimus vero officia."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Customer Section End-->
+    <!--Footer-->
+    <footer class="footer" id="contact">
+        <div class="main__part">
+            <div class="footerlist__wrapper">
+                <h3 class="footer__heading">
+                    Hotel Project
+                </h3>
+                <ul class="footer__list">
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            support_hotel@info.com
+                        </a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            New York, Main Street 123
+                        </a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            Tel: +123 654 878
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footerlist__wrapper">
+                <h3 class="footer__heading">
+                    Explore
+                </h3>
+                <ul class="footer__list">
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            Rooms
+                        </a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            Events
+                        </a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            Customers
+                        </a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a href="" class="footer__list__link">
+                            Contacts
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h3 class="footer__heading">
+                    Contact
+                </h3>
+                <p>Sign Up gor News</p>
+                <form action="" class="footer__form">
+                    <input type="text" placeholder="Your email...." class="footer__input">
+                    <button class="footer__btn">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+            <div class="gallery">
+                <h3 class="footer__heading">
+                    Gallery
+                </h3>
+                <div class="gallery__images">
+                    <div class="image__wrapper">
+                        <img src="img/vip.jpg" alt="footer image" class="footer__image">
+                    </div>
+                    <div class="image__wrapper">
+                        <img src="img/vip.jpg" alt="footer image" class="footer__image">
+                    </div>
+                    <div class="image__wrapper">
+                        <img src="img/vip.jpg" alt="footer image" class="footer__image">
+                    </div>
+                    <div class="image__wrapper">
+                        <img src="img/vip.jpg" alt="footer image" class="footer__image">
+                    </div>
+                    <div class="image__wrapper">
+                        <img src="img/vip.jpg" alt="footer image" class="footer__image">
+                    </div>
+                    <div class="image__wrapper">
+                        <img src="img/vip.jpg" alt="footer image" class="footer__image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="creator__part">
+            <div class="copyright__text">
+                <p>Copyright &copy; 2020, Hotel Project</p>
+            </div>
+            <div class="text__right">
+                <p>Made With <i class="fa fa-heart"></i> by <span> Enter Your Name</span></p>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
 </body>
+
 </html>

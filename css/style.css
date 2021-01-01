@@ -1,31 +1,25 @@
-/*Import Fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,300&display=swap");
-
-/*Make whole web font 72.5%. Default font size was 16px, now font change 72.5% === 11.6px */
 html {
-  font-size: 72.5%;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: .5s;
 }
-
-/*target whole body / universe for vanish 
-all default margin padding and define font family for whole web*/
+:root{
+  --goldenColor-- :  #f5b507;
+  --brownLight-- : #deaa86;
+  --darkGold-- : goldenrod;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
-
-/*Css Variables*/
-:root {
-  --mainColor--: #c77c46;
-  --navbar--: #eee;
-}
-
-/*SideBar*/
+/*Navbar*/
+/**SideBar*/
 .sidebar {
   width: 8rem;
   height: 100%;
-  background-color: var(--navbar--);
+  background-color: #eee;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -36,10 +30,11 @@ body {
 .menu__icons {
   margin-top: 3rem;
   cursor: pointer;
+  transition: all 0.5s;
 }
 .menu__icons:hover > .line {
   width: 2.5rem;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 .line {
   height: 0.2rem;
@@ -50,7 +45,23 @@ body {
 .line__1,
 .line__3 {
   width: 1.8rem;
-  background-color: var(--mainColor--);
+}
+.social__icons__list {
+  list-style: none;
+  padding-left: 0;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.social__link {
+  font-size: 2rem;
+  color: #777;
+  transition: 0.5s;
+}
+.social__link:hover {
+  color: var(--goldenColor--);
 }
 .year {
   margin-bottom: 1rem;
@@ -76,27 +87,27 @@ body {
   justify-content: space-between;
   align-items: center;
   transition: left 0.5s cubic-bezier(1, 0, 0, 1);
+  z-index: 5;
 }
 .navigation__heading {
   font-family: "Josefin Sans", sans-serif;
   font-size: 3.5rem;
   font-weight: 300;
   letter-spacing: 0.2rem;
-  color: var(--mainColor--);
+  color: var(--brownLight--);
   text-align: center;
 }
 
 .navigation__search {
   position: relative;
 }
-
 .navigation__search__input {
   width: 30rem;
   padding: 1rem 2rem;
   background-color: rgba(0, 0, 0, 0.3);
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.6rem;
-  color: var(--mainColor--);
+  color: var(--brownLight--);
   letter-spacing: 0.1rem;
   outline: none;
   border: 0.1rem solid #555;
@@ -109,10 +120,10 @@ body {
 .navigation__search__btn {
   border: none;
   background-color: transparent;
-  color: var(--mainColor--);
+  color: var(--brownLight--);
   font-size: 1.7rem;
   position: absolute;
-  top: 1rem;
+  top: 0.8rem;
   right: 1rem;
   cursor: pointer;
   outline: none;
@@ -141,7 +152,7 @@ body {
   content: "";
   width: 0rem;
   height: 0.1rem;
-  background-color: var(--mainColor--);
+  background-color: var(--brownLight--);
   position: absolute;
   top: 1rem;
   left: -4rem;
@@ -150,14 +161,14 @@ body {
   content: "";
   width: 0rem;
   height: 0.1rem;
-  background-color: var(--mainColor--);
+  background-color:var(--brownLight--);
   position: absolute;
   top: 1rem;
   right: -4rem;
 }
 
 .navigation__link:hover {
-  color: var(--mainColor--);
+  color: var(--brownLight--);
 }
 .navigation__link:hover::before,
 .navigation__link:hover::after {
@@ -179,7 +190,6 @@ body {
   transform: rotate(-405deg) translate(-5px, 6px);
   width: 2.5rem;
   transition: 0.5;
-  margin: 0.4rem;
 }
 .checkbox:checked ~ .sidebar .line__2 {
   opacity: 0;
@@ -188,69 +198,79 @@ body {
   transform: rotate(405deg) translate(-5px, -6px);
   width: 2.5rem;
   transition: 0.5s;
-  margin: 0.4rem;
 }
 
 /*Header*/
-.header{
+.header {
   margin-left: 8rem;
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url(../img/header.jpg) center no-repeat;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url(../img/header.jpg) center no-repeat;
   background-size: cover;
 }
-.brand{
+
+.brand {
   display: flex;
   cursor: pointer;
   align-items: center;
 }
-.banner{
-  display: flex;
-  flex-direction: column;
+.banner {
   color: #ddd;
   height: 65rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.banner__heading{
+.banner__heading {
   font-family: "Josefin Sans", sans-serif;
   font-size: 7rem;
   font-weight: 400;
   margin-bottom: 0;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
+  animation: anim 2s;
   text-align: center;
 }
-.banner__para{
+.banner__paragraph {
   font-size: 3.5rem;
   font-weight: 300;
+  animation: anim 1.5s 0.5s backwards;
 }
-.banner__btn{
+.banner__btn {
   width: 21rem;
   padding: 1.2rem 2rem;
   font-size: 2rem;
   color: #333;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   border: none;
   border-radius: 4rem;
   outline: none;
   cursor: pointer;
-  background: linear-gradient(to right, gold, goldenrod);
+  background: linear-gradient(to right,var(--goldenColor--), var(--darkGold--));
+  animation: anim 1s 1s backwards;
 }
-.banner__btn:hover{
-  background: linear-gradient(to left, gold, goldenrod);
-  transition: .5s;
+.banner__btn:hover {
+  background: linear-gradient(to left, var(--goldenColor--), var(--darkGold--));
 }
-.banner__btn:active{
-  transform: translateY(0.8rem);
+.banner__btn:active {
+  transform: translateY(0.2rem);
 }
-
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*About us*/
-.about__us{
+.about__us {
   margin-left: 8rem;
   display: flex;
   flex-wrap: wrap;
   background-color: #ddd;
 }
-.aboutus__content{
+.aboutus__content {
   flex: 0 1 50%;
   display: flex;
   flex-direction: column;
@@ -259,101 +279,473 @@ body {
   padding: 10rem;
   box-sizing: border-box;
 }
-.aboutus__heading{
-  font-family: 'Josefin Sans', sans-serif;
+.aboutus__heading {
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 4rem;
   color: #555;
 }
-.sub__heading{
+
+.sub__heading {
   font-size: 3.5rem;
   font-weight: 300;
   letter-spacing: 0.2rem;
-  color: #f5b507;
+  color: var(--goldenColor--);
 }
-.aboutus__paragraph{
+
+.aboutus__paragraph {
   font-size: 1.6rem;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 300;
   text-align: center;
   margin-bottom: 5rem;
 }
-.aboutus__content > .btn{
+
+.aboutus__content > .btn {
   width: 15rem;
   padding: 0.7rem 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   text-transform: uppercase;
   background-color: transparent;
-  color: #f5b507;
-  border: 0.1rem solid #f5b507;
+  color: var(--goldenColor--);
+  border: 0.1rem solid var(--goldenColor--);
   outline: none;
   cursor: pointer;
 }
-.btn__arrow{
+
+.btn__arrow {
   margin-left: 0.5rem;
 }
-.btn:hover, .btn__arrow{
+
+.btn:hover,
+.btn__arrow {
   margin-left: 0.5rem;
   transition: 0.5s;
 }
-.aboutus__images{
+
+/*About us images*/
+.aboutus__images {
   flex: 1 1;
   position: relative;
 }
-.image{
+.image {
   width: 30rem;
   position: absolute;
   top: 50%;
   left: 50%;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.4);
   border-radius: 0.8rem;
-  border: 0.1rem solid #f5b507;
+  border: 0.1rem solid var(--goldenColor--);
 }
-.image__1{
+
+.image__1 {
   transform: translate(-20%, -90%);
 }
-.image__2{
+.image__2 {
   transform: translate(-70%, -70%);
 }
-.image__3{
+.image__3 {
   transform: translate(-50%, -50%);
 }
-.image__4{
+.image__4 {
   transform: translate(-30%, -30%);
 }
-.small__underline{
+
+/*Common Header*/
+.common__header {
+  padding: 5rem;
+  text-align: center;
+  color: var(--goldenColor--);
+}
+.common__heading {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+.small__underline {
   width: 9rem;
   height: 0.1rem;
-  background-color: #f5b507;
+  background-color: var(--goldenColor--);
   margin: 0 auto 1rem auto;
 }
-.large__underline{
+.big__underline {
   width: 20rem;
   height: 0.1rem;
-  background-color: #f5b507;
   margin: auto;
+  background-color:var(--goldenColor--);
 }
-/*For Very small Screen*/
+/*Rooms*/
+.rooms {
+  margin-left: 8rem;
+}
 
-@media (max-width: 550px) {
-  .sidebar {
-    width: 5rem;
+.rooms__cards__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.room__card {
+  width: 60rem;
+  margin: 5rem;
+  background-color: #333;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.3);
+}
+
+.room__img {
+  width: 100%;
+}
+
+.room__card__content {
+  color: #ddd;
+  padding: 2rem;
+}
+
+.room__card__heading {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.room__card__paragraph {
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.room__price {
+  font-size: 5rem;
+  font-weight: 300;
+  text-align: right;
+  margin: 0;
+}
+
+.row__card__btn {
+  width: 15rem;
+  padding: 1.5rem 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--goldenColor--);
+  border-radius: 4rem;
+  border: 0.1rem solid var(--goldenColor--);
+  outline: none;
+  cursor: pointer;
+}
+
+.rooms__btn__wrapper {
+  text-align: center;
+}
+.rooms__btn {
+  width: 20rem;
+  padding: 1.5rem 1rem;
+  margin: 4rem 0;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: var(--goldenColor--);
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 1.5rem 6rem rgba(0, 0, 0, 0.3);
+  border: 0.2rem solid var(--goldenColor--);
+  border-radius: 1.2rem;
+  transition: 0.5s;
+}
+
+.rooms__btn:hover {
+  color: #ffff;
+  background-color: var(--goldenColor--);
+}
+
+/*Customer Section*/
+.customers {
+  margin-left: 8rem;
+  padding-bottom: 7rem;
+  background-color: #15141b;
+}
+.customer__para {
+  font-size: 1.8rem;
+  color: #ddd;
+  width: 50%;
+  margin: 2rem auto 8rem auto;
+  text-align: center;
+}
+.customers__card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.customer__card {
+  background: #eee;
+  width: 60rem;
+  display: flex;
+  margin: 1rem;
+  /* flex-wrap: wrap; */
+}
+.customer__image {
+  width: 20rem;
+  margin-left: -1.3rem;
+}
+.customer__info {
+  padding: 0 2rem;
+}
+.customer__name {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+.customer__para1 {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--goldenColor--);
+}
+.customer__para2 {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.customer__image__wrapper {
+  margin: auto 0;
+  margin-left: 1rem;
+}
+
+/*Footer*/
+.footer {
+  margin-left: 8rem;
+}
+.main__part {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #1c1c1c;
+  padding: 4rem;
+}
+.footer__heading {
+  font-weight: 300;
+  font-size: 2.5rem;
+  color: var(--darkGold--);
+  margin: 1rem 0 3rem 0;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__list__item {
+  margin-bottom: 2rem;
+}
+
+.footer__list__link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #bbb;
+}
+.contact p {
+  font-size: 1.5rem;
+  color: #bbb;
+  margin-bottom: 4rem;
+}
+
+.footer__form {
+  display: flex;
+}
+.footer__input {
+  width: 25rem;
+  padding: 1rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.8rem;
+  color: #444;
+  outline: none;
+}
+.footer__btn {
+  padding: 1rem;
+  background-color: var(--goldenColor--);
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.gallery {
+  max-width: 45rem;
+}
+.image__wrapper {
+  width: 12rem;
+  margin: 0.4rem;
+  overflow: hidden;
+}
+.footer__image {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 0.5s;
+}
+.gallery__images {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer__image:hover {
+  transform: scale(1.3);
+  opacity: 0.8;
+  cursor: pointer;
+}
+.creator__part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 0 4rem;
+}
+.copyright__text {
+  font-size: 1.3rem;
+  color: #ddd;
+}
+.text__right {
+  font-size: 1.4rem;
+  color: #bbb;
+}
+.text__right i {
+  color: tomato;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+.text__right span {
+  color: var(--goldenColor--);
+}
+/*Media Queries*/
+@media (max-width: 1400px) {
+  .customers__card__wrapper {
+    flex-direction: column;
+    align-items: center;
   }
+  .customer__card:first-child {
+    margin-bottom: 3rem;
+  }
+  .main__part {
+    flex-direction: column;
+  }
+  .footer__list {
+    display: flex;
+  }
+  .footer__list__item {
+    margin-right: 3rem;
+  }
+}
+@media (max-width: 1200px) {
+  .about__us {
+    flex-direction: column;
+    padding-bottom: 20rem;
+  }
+  .aboutus__content {
+    margin-bottom: 13rem;
+  }
+  .image {
+    width: 25rem;
+  }
+}
+@media (max-width: 900px) {
+  .banner {
+    text-align: center;
+  }
+  .banner__heading {
+    font-size: 4.7rem;
+  }
+  .banner__paragraph {
+    font-size: 2.6rem;
+  }
+  .banner__btn {
+    width: 16rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 750px) {
+  .customer__card {
+    flex-direction: column;
+    width: 20rem;
+  }
+  .customer__image {
+    margin-left: 0;
+  }
+  .customer__image__wrapper {
+    margin-left: 0;
+  }
+  .footer__list {
+    display: block;
+  }
+  .creator__part {
+    flex-direction: column;
+    text-align: center;
+  }
+  .copyright__text {
+    order: 1;
+  }
+}
+@media (max-width: 500px) {
   .navigation {
-    width: 24rem;
+    width: 28rem;
   }
   .navigation__search__input {
-    width: 16rem;
+    width: 20rem;
   }
-  .navigation__link {
-    font-size: 1.2rem;
+  .banner {
+    height: 100%;
+    margin-top: -10rem;
   }
-  .navigation__heading {
+  .banner__heading {
+    font-size: 3rem;
+  }
+  .banner__paragraph {
+    font-size: 2rem;
+  }
+  .about__us {
+    padding-bottom: 15rem;
+  }
+  .aboutus__heading {
     font-size: 2.5rem;
+    text-align: center;
   }
-  .checkbox:checked ~ .navigation {
-    left: 5rem;
+  .sub__heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .aboutus__content {
+    padding: 5rem;
+  }
+  .image {
+    width: 13rem;
+  }
+  .common__heading {
+    font-size: 2rem;
+  }
+  .small__underline {
+    width: 5rem;
+  }
+  .big__underline {
+    width: 10rem;
+  }
+  .room__card__heading {
+    font-size: 1.5rem;
+  }
+  .room__price {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  .row__card__btn {
+    width: 12rem;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+  .customer__para {
+    font-size: 1.4rem;
+    width: 80%;
+  }
+  .main__part {
+    padding: 2rem;
+  }
+  .footer__input {
+    width: 12rem;
+  }
+  .image__wrapper {
+    width: 9rem;
   }
 }
